@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Khongsorzul News</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-init.js"></script>
+</head>
+<body>
+  <h1>Khongsorzul News Portal</h1>
+  <div id="news-list"></div>
+
+  <script>
+    const newsList = document.getElementById("news-list");
+    db.collection("news").orderBy("date","desc").get().then(snapshot => {
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.innerHTML = `<h2>${data.title}</h2><p>${data.content}</p><hr>`;
+        newsList.appendChild(div);
+      });
+    });
+  </script>
+</body>
+</html>
