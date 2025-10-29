@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add News</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="add-news.js"></script>
+</head>
+<body>
+  <h1>Add News</h1>
+  <input type="text" id="title" placeholder="Title"><br><br>
+  <textarea id="content" placeholder="Content"></textarea><br><br>
+  <button onclick="submitNews()">Add News</button>
+</body>
+</html>
